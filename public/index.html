@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="uz">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Video Storage</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header><a href="/" class="logo">▶ Video Storage</a></header>
+  <main>
+    <p class="hint">Telegram botga video yuboring — u shu yerda paydo bo'ladi.</p>
+    <div id="grid" class="grid"></div>
+    <p id="empty" class="empty" hidden>Hozircha video yo'q.</p>
+  </main>
+  <div id="toast" class="toast"></div>
+  <script src="/app.js"></script>
+  <script>renderList();</script>
+</body>
+</html>

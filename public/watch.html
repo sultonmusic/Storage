@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="uz">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--META-->
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header><a href="/" class="logo">▶ Video Storage</a></header>
+  <main class="watch">
+    <video id="player" controls playsinline preload="metadata"></video>
+    <div class="info">
+      <h1 id="title"></h1>
+      <div class="row">
+        <span id="meta" class="meta"></span>
+        <button id="share" class="btn">🔗 Ulashish</button>
+      </div>
+    </div>
+  </main>
+  <div id="toast" class="toast"></div>
+  <script src="/app.js"></script>
+  <script>renderWatch(__VIDEO__);</script>
+</body>
+</html>
