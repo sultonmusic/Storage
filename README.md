@@ -32,3 +32,19 @@ npm start                # http://localhost:3000
 
 Doimiy ishlaydigan har qanday Node hosting (VPS, Render, Railway, Fly.io).
 `data/` papkasi saqlanib qolishi kerak (persistent disk), aks holda ro'yxat yo'qoladi.
+
+## Bepul variant: Cloudflare Workers (tavsiya)
+
+Karta shart emas, uxlab qolmaydi, ma'lumot KV'da saqlanadi. Kod: `cloudflare/worker.js` (bitta fayl).
+
+1. https://dash.cloudflare.com da ro'yxatdan o'ting.
+2. **Storage & Databases → KV → Create** — nomi `videos`.
+3. **Workers & Pages → Create → Start with Hello World → Deploy**.
+4. **Edit code** — `cloudflare/worker.js` ichidagini to'liq qo'yib, **Deploy**.
+5. Worker **Settings → Bindings → Add → KV namespace**: Variable name `DB`, namespace `videos`.
+6. **Settings → Variables and Secrets → Add**: Type `Secret`, nomi `BOT_TOKEN`, qiymati bot tokeni.
+7. Brauzerda `https://<worker-nomi>.<sizning-nom>.workers.dev/setup` ni bir marta oching — "✅ Tayyor" chiqadi.
+
+Sayt manzili: `https://<worker-nomi>.<sizning-nom>.workers.dev`
+
+> Worker webhook ishlatadi, `server.js` esa polling. Ikkalasini bir vaqtda ishlatmang.
